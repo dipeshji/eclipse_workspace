@@ -1,0 +1,48 @@
+package com.serverless.assignment.springbootawsserverless.handlers;
+
+import com.amazonaws.serverless.proxy.model.AwsProxyRequest;
+import com.amazonaws.serverless.proxy.model.AwsProxyResponse;
+import com.amazonaws.serverless.proxy.spring.SpringBootLambdaContainerHandler;
+import com.amazonaws.services.lambda.runtime.Context;
+import com.amazonaws.services.lambda.runtime.RequestHandler;
+import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent;
+import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent;
+import com.serverless.assignment.springbootawsserverless.serivce.ProductService;
+
+public class LambdaHandler implements RequestHandler<APIGatewayProxyRequestEvent, APIGatewayProxyResponseEvent> {
+
+	ProductService productService = new ProductService();
+
+	@Override
+	public APIGatewayProxyResponseEvent handleRequest(APIGatewayProxyRequestEvent apiGateWayRequest, Context context) {
+		private static SpringBootLambdaContainerHandler<AwsProxyRequest, AwsProxyResponse> handler;
+	    static {
+	        try {
+	            handler = SpringBootLambdaContainerHandler.getAwsProxyHandler(Application.class);
+	            // If you are using HTTP APIs with the version 2.0 of the proxy model, use the getHttpApiV2ProxyHandler
+	            // method: handler = SpringBootLambdaContainerHandler.getHttpApiV2ProxyHandler(Application.class);
+	        } catch (ContainerInitializationException e) {
+	            // if we fail here. We re-throw the exception to force another cold start
+	            e.printStackTrace();
+	            throw new RuntimeException("Could not initialize Spring Boot application", e);
+	        }
+	    }
+		switch (apiGateWayRequest.getHttpMethod()) {
+		case "POST":
+			return productService.saveProduct(apiGateWayRequest, context);
+		case "GET":
+			if (apiGateWayRequest.getPathParameters() != null) {
+				return productService.getProductById(apiGateWayRequest, context);
+			}
+			return productService.getProducts(apiGateWayRequest, context);
+		case "DELETE":
+			if (apiGateWayRequest.getPathParameters() != null) {
+				return productService.deleteProductById(apiGateWayRequest, context);
+
+			}
+		default:
+			throw new Error("Unsoportd Operation: " + apiGateWayRequest.getHttpMethod());
+		}
+	}
+
+}

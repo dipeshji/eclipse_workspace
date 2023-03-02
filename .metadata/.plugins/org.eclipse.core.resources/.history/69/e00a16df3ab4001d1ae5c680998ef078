@@ -1,0 +1,38 @@
+package com.serverless.assignment.springbootawsserverless.serivce;
+
+import java.util.Map;
+
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
+import com.amazonaws.services.lambda.runtime.Context;
+import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent;
+import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent;
+import com.serverless.assignment.springbootawsserverless.entity.Product;
+import com.serverless.assignment.springbootawsserverless.utilitiy.Utility;
+
+public class ProductService {
+	private DynamoDBMapper dynamoDbMapper;
+	private String jsonBody = null;
+
+	public APIGatewayProxyResponseEvent saveProduct(APIGatewayProxyRequestEvent apiGatewayRequest, Context context) {
+		initDynamoDb();
+		Product product = Utility.convertStringToObject(apiGatewayRequest.getBody(), context);
+		jsonBody = Utility.convertObjectToString(product, context);
+		context.getLogger().log("Product data saved to database: " + jsonBody);
+		return createApiResponse(jsonBody, 201, Utility.createHeader());
+	}
+
+	private void initDynamoDb() {
+		AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard().build();
+		dynamoDbMapper = new DynamoDBMapper(client);
+	}
+
+	private APIGatewayProxyResponseEvent createApiResponse(String body, int statusCode, Map<String, String> headers) {
+		APIGatewayProxyResponseEvent event = new APIGatewayProxyResponseEvent();
+		event.setBody(body);
+		event.setHeaders(headers);
+		event.setStatusCode(statusCode);
+		return event;
+	}
+}

@@ -1,0 +1,3 @@
+com/aws/trigger/lambdatrigger/App.class
+com/aws/trigger/lambdatrigger/S3EventHandler.class
+com/aws/trigger/lambdatrigger/entity/Product.class

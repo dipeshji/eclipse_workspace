@@ -1,0 +1,22 @@
+package com.serverless.assignment.springbootawsserverless.serivce;
+
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
+import com.amazonaws.services.lambda.runtime.Context;
+import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent;
+import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyResponseEvent;
+
+public class ProductService {
+	private DynamoDBMapper dynamoDbMapper;
+
+	public APIGatewayProxyResponseEvent createOrder(APIGatewayProxyRequestEvent apiGatewayRequest, Context context) {
+		initDynamoDb();
+		return new APIGatewayProxyResponseEvent();
+	}
+
+	private void initDynamoDb() {
+		AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard().build();
+		dynamoDbMapper = new DynamoDBMapper(client);
+	}
+}

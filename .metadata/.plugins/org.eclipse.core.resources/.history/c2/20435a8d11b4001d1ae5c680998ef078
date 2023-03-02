@@ -1,0 +1,5 @@
+package com.serverless.assignment.springbootawsserverless.serivce;
+
+public class EmployeeService {
+
+}

@@ -1,0 +1,5 @@
+package com.aws.serverless.awsserverless.entity;
+
+public class Product {
+
+}
