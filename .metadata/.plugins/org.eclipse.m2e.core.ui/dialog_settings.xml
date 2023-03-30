@@ -2,6 +2,12 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="/home/dipesh/eclipse-workspace/assignment_elasticsearch"/>
+			<item value="/home/dipesh/eclipse-workspace/containers_assignment"/>
+			<item value="/home/dipesh/eclipse-workspace/container_assignment"/>
+			<item value="/home/dipesh/eclipse-workspace/container_assignment "/>
+			<item value="/home/dipesh/eclipse-workspace/springboot-docker-ecs"/>
+			<item value="/home/dipesh/Documents/AWS Trainings/infrastructure"/>
 			<item value="/home/dipesh/eclipse-workspace/s3triggerlambda"/>
 			<item value="/home/dipesh/Documents/java_workspace/springboot-aws-serverless"/>
 		</list>

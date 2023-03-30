@@ -1,5 +1,0 @@
-package com.aws.trigger.lambdatrigger.entity;
-
-public class Product {
-
-}

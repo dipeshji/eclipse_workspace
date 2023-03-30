@@ -2,4 +2,22 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="com.amazonaws.serverless.proxy.spring.SpringBootLambdaContainerHandler"/>
     <fullyQualifiedTypeName name="com.amazonaws.serverless.proxy.model.AwsProxyRequest"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+    <fullyQualifiedTypeName name="org.apache.kafka.common.Configurable"/>
+    <fullyQualifiedTypeName name="org.springframework.context.ConfigurableApplicationContext"/>
+    <fullyQualifiedTypeName name="org.springframework.boot.SpringApplication"/>
+    <fullyQualifiedTypeName name="com.kafka.assignment.consumer_producer.ConsumerProducerApplication"/>
+    <fullyQualifiedTypeName name="com.kafka.assignment.consumer_producer.KafkaProducer"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.Bean"/>
+    <fullyQualifiedTypeName name="org.elasticsearch.client.RestClient"/>
+    <fullyQualifiedTypeName name="org.springframework.data.elasticsearch.annotations.Document"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
+    <fullyQualifiedTypeName name="co.elastic.clients.elasticsearch.ElasticsearchClient"/>
+    <fullyQualifiedTypeName name="java.util.Objects"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="com.elasticsearch.assignment_elasticsearch.repository.ElasticSearchQueryRepository"/>
+    <fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
 </qualifiedTypeNameHistroy>

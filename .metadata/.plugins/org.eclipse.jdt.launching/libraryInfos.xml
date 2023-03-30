@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <libraryInfos>
     <libraryInfo home="/home/dipesh/Downloads/eclipse-jee-2021-03-R-linux-gtk-x86_64 (1)/eclipse/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.linux.x86_64_15.0.2.v20210201-0955" version="15.0.2"/>
-    <libraryInfo home="/usr/lib/jvm/java-17-openjdk-amd64" version="17.0.5"/>
+    <libraryInfo home="/usr/lib/jvm/java-17-openjdk-amd64" version="17.0.6"/>
     <libraryInfo home="/home/dipesh/Downloads/eclipse-jee-2021-03-R-linux-gtk-x86_64 (1)/eclipse/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.linux.x86_64_15.0.2.v20210201-0955/jre" version="15.0.2"/>
     <libraryInfo home="/usr/lib/jvm/java-11-openjdk-amd64" version="11.0.17"/>
     <libraryInfo home="/usr/lib/jvm/default-java" version="11.0.17"/>
